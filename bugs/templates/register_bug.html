@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Bug</title>
+</head>
+<body>
+    <h1>Register a Bug</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register Bug</button>
+    </form>
+</body>
+</html>

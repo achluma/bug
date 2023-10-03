@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Bug Tracking App</title>
+</head>
+<body>
+    <h1>Welcome to My Bug Tracking App</h1>
+    <p>This is a simple bug tracking application built with Django.</p>
+    <p>Get started by registering a bug:</p>
+    <a href="{% url 'register_bug' %}">Register a Bug</a>
+
+    <h2>Recent Bugs</h2>
+    <ul>
+        {% for bug in recent_bugs %}
+            <li><a href="{% url 'view_bug' bug.id %}">{{ bug.description }}</a></li>
+        {% empty %}
+            <li>No bugs have been registered yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
